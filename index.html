@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RNG Dice Clicker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card hero">
+      <div>
+        <h1>RNG Dice Clicker</h1>
+        <p>Click the dice, roll rare stuff, earn coins, and buy upgrades to boost your luck, coin gain, and rarity streaks.</p>
+      </div>
+      <div class="topbar">
+        <div class="stat">Coins<b id="coins">0</b></div>
+        <div class="stat">Rolls<b id="rolls">0</b></div>
+        <div class="stat">Luck<b id="luck">1.00x</b></div>
+        <div class="stat">Coin Mult<b id="coinMult">1.00x</b></div>
+      </div>
+      <div class="arena">
+        <div class="diceBox">
+          <div id="dice" class="dice glow">🎲</div>
+          <button class="rollBtn" id="rollBtn">Roll the Dice</button>
+          <div class="mini">Tip: rarer outcomes give more coins.</div>
+        </div>
+        <div class="diceBox">
+          <h3 style="margin:0 0 10px">Latest Roll</h3>
+          <div class="rollLog">
+            <div>
+              <div class="rarity common" id="resultName">Nothing yet</div>
+              <div class="mini" id="resultChance">Click the dice to start.</div>
+            </div>
+            <div style="font-size:28px;font-weight:900" id="resultEmoji">✨</div>
+          </div>
+          <div style="height:12px"></div>
+          <div class="rollLog"><div>Bonus coins</div><div id="bonusCoins">0</div></div>
+          <div class="rollLog"><div>Auto-rolls unlocked</div><div id="autoRolls">0</div></div>
+        </div>
+      </div>
+      <div class="card" style="padding:18px;background:rgba(255,255,255,.03)">
+        <h3 style="margin:0 0 12px">Rarity Feed</h3>
+        <div class="list" id="log"></div>
+      </div>
+    </div>
+    <div class="card side">
+      <div>
+        <h2 style="margin:0 0 6px">Upgrades</h2>
+        <p>Spend coins to improve your run.</p>
+      </div>
+      <div class="shopItem"><div><b>Luck Boost</b><small>Improves chances for higher rarities.</small></div><div><button class="shopBtn" id="buyLuck">Buy 50</button></div></div>
+      <div class="shopItem"><div><b>Coin Multiplier</b><small>More coins per roll.</small></div><div><button class="shopBtn" id="buyCoin">Buy 75</button></div></div>
+      <div class="shopItem"><div><b>Auto Roller</b><small>Rolls once every 2 seconds.</small></div><div><button class="shopBtn" id="buyAuto">Buy 150</button></div></div>
+      <div class="shopItem"><div><b>Rare Finder</b><small>Raises rarity weight a little.</small></div><div><button class="shopBtn" id="buyFind">Buy 250</button></div></div>
+      <div class="shopItem"><div><b>Reset Game</b><small>Start over from scratch.</small></div><div><button class="shopBtn" id="resetBtn" style="background:linear-gradient(135deg,#ff6b8b,#ff9f43)">Reset</button></div></div>
+      <div class="card" style="padding:16px;background:rgba(255,255,255,.03)">
+        <b>Rarities</b>
+        <div class="mini" style="margin-top:8px;line-height:1.7">Common, Uncommon, Rare, Epic, Legendary, Mythic, Cosmic, Divine, Ultra, Secret, and Elemental variants.</div>
+      </div>
+    </div>
+    <div class="footer">Save these files in the same folder and open <b>index.html</b> in a browser.</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
