@@ -7,7 +7,8 @@ const state = {
   auto: 0,
   luckUp: 0,
   coinUp: 0,
-  findUp: 0
+  findUp: 0,
+  rareCount: 0
 };
 
 const rarities = [
@@ -37,6 +38,7 @@ function update(){
   el('coinMult').textContent = state.coinMult.toFixed(2) + 'x';
   el('bonusCoins').textContent = fmt(state.bonus);
   el('autoRolls').textContent = state.auto;
+  el('rareCount').textContent = fmt(state.rareCount);
 
   el('buyLuck').textContent = 'Buy ' + (50 + state.luckUp * 35);
   el('buyCoin').textContent = 'Buy ' + (75 + state.coinUp * 50);
@@ -82,6 +84,8 @@ function roll(){
 
   state.coins += coins;
   state.bonus += coins;
+
+  if(r.reward >= 50) state.rareCount++;
 
   el('resultName').textContent = r.name;
   el('resultName').className = 'rarity ' + r.color;
